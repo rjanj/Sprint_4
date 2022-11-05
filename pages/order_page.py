@@ -1,7 +1,4 @@
-import time
-
 import allure
-from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
@@ -30,6 +27,7 @@ class OrderPageScooter:
     main_order_button_two = OrderPageLocators.main_order_button_two
     scooter_image = OrderPageLocators.scooter_image
     yandex_image = OrderPageLocators.yandex_image
+    cookies_accept = OrderPageLocators.cookies_accept
 
     def __init__(self, driver):
         self.driver = driver
@@ -41,11 +39,6 @@ class OrderPageScooter:
     @allure.step('Нажали на кнопку "Заказать" в шапке сайта')
     def order_button_one_click(self):
         self.driver.find_element(*self.main_order_button_one).click()
-
-    @allure.step('Проматываем страницу к кнопке "Заказать"')
-    def rotation_to_order_button(self):
-        order_button_text = self.driver.find_element(*self.main_order_button_two)
-        self.driver.execute_script("arguments[0].scrollIntoView();", order_button_text)
 
     @allure.step('Нажали на кнопку заказать в теле сайта')
     def order_button_two_click(self):
@@ -132,6 +125,11 @@ class OrderPageScooter:
                 self.driver.switch_to.window(window_handle)
                 break
         wait.until(EC.title_is("Дзен"))
+
+    def wait_element(self):
+        WebDriverWait(self.driver, 5)
+    def order_cookies_accept(self):
+        self.driver.find_element(*self.cookies_accept).click()
 
     @allure.step('Заполнение полей заказа и его подтверждение')
     def order_page_login(self, name, second_name, address, number, note):

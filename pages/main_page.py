@@ -4,7 +4,6 @@ from locators.main_page_locators import MainPageLocators
 
 
 class MainPageScooter:
-    main_questions_text = MainPageLocators.main_questions_text
     question_one_text = MainPageLocators.question_one_text
     question_one_answer = MainPageLocators.question_one_answer
     question_two_text = MainPageLocators.question_two_text
@@ -21,6 +20,7 @@ class MainPageScooter:
     question_seven_answer = MainPageLocators.question_seven_answer
     question_eight_text = MainPageLocators.question_eight_text
     question_eight_answer = MainPageLocators.question_eight_answer
+    cookies_accept = MainPageLocators.cookies_accept
 
     def __init__(self, driver):
         self.driver = driver
@@ -28,11 +28,6 @@ class MainPageScooter:
     @allure.step('Открываем главную страницу Scooter')
     def navigate(self):
         self.driver.get('https://qa-scooter.praktikum-services.ru')
-
-    @allure.step('Проматываем страницу к вопросам')
-    def main_questions_text_rotation(self):
-        main_questions_text = self.driver.find_element(*self.main_questions_text)
-        self.driver.execute_script("arguments[0].scrollIntoView();", main_questions_text)
 
     @allure.step('Открываем первый вопрос')
     def click_question_one(self):
@@ -105,3 +100,6 @@ class MainPageScooter:
     def text_question_answer_eight(self):
         question_eight_answer = self.driver.find_element(*self.question_eight_answer).text
         return question_eight_answer
+
+    def main_cookies_accept(self):
+        self.driver.find_element(*self.cookies_accept).click()

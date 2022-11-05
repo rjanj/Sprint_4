@@ -7,9 +7,10 @@ from pages.order_page import OrderPageScooter
 class TestScooterOrder:
     @allure.description(
         'Проверяем, что после заполнения данных и подтверждения заказа будет получено сообщение "Заказ оформлен"')
-    def test_order_one_one(self, driver):
+    def test_order_one(self, driver):
         reg_order = OrderPageScooter(driver)
         reg_order.navigate()
+        reg_order.order_cookies_accept()
         reg_order.order_button_one_click()
         name = "Рома"
         second_name = "Роман"
@@ -22,16 +23,17 @@ class TestScooterOrder:
 
     @allure.description(
         'Проверяем, что после заполнения данных и подтверждения заказа будет получено сообщение "Заказ оформлен"')
-    def test_order_two_kek(self, driver):
+    def test_order_two(self, driver):
         reg_order = OrderPageScooter(driver)
         reg_order.navigate()
-        reg_order.rotation_to_order_button()
+        reg_order.order_cookies_accept()
         reg_order.order_button_two_click()
         name = "Антуан"
         second_name = "Антуанов"
         address = 'Истра'
         number = '88003333333'
         note = 'Мерси'
+        reg_order.wait_element()
         reg_order.order_page_login(name, second_name, address, number, note)
         order_complete_text = reg_order.order_page_order_complete_text()
         assert 'Заказ оформлен' in order_complete_text
@@ -43,13 +45,14 @@ class TestSiteNavigating:
     def test_rotating_scooter(self, driver):
         reg_order = OrderPageScooter(driver)
         reg_order.navigate()
-        reg_order.rotation_to_order_button()
+        reg_order.order_cookies_accept()
         reg_order.order_button_two_click()
         name = "Жорик"
         second_name = "Сергеев"
         address = 'Москва'
         number = '88003333333'
         note = 'Спасибо'
+        reg_order.wait_element()
         reg_order.order_page_login(name, second_name, address, number, note)
         reg_order.order_page_status_button()
         reg_order.scooter_image_click()
@@ -60,13 +63,14 @@ class TestSiteNavigating:
     def test_rotating_yandex(self, driver):
         reg_order = OrderPageScooter(driver)
         reg_order.navigate()
-        reg_order.rotation_to_order_button()
+        reg_order.order_cookies_accept()
         reg_order.order_button_two_click()
         name = "Антон"
         second_name = "Астахов"
         address = 'Москва'
         number = '88003333333'
         note = 'Скорее бы'
+        reg_order.wait_element()
         reg_order.order_page_login(name, second_name, address, number, note)
         reg_order.order_page_status_button()
         reg_order.yandex_image_click()

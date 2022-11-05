@@ -2,8 +2,6 @@ from selenium.webdriver.common.by import By
 
 
 class MainPageLocators:  # Главная страница
-    main_questions_text = (By.XPATH, "//div[1][text() = 'Вопросы о важном']")
-
     question_one_text = (By.ID, "accordion__heading-0")
     question_one_answer = (By.XPATH, "//p[text() = 'Сутки — 400 рублей. Оплата курьеру — наличными или картой.']")
 
@@ -37,3 +35,5 @@ class MainPageLocators:  # Главная страница
     question_eight_text = (By.ID, "accordion__heading-7")
     question_eight_answer = (
         By.XPATH, "//p[text() = 'Да, обязательно. Всем самокатов! И Москве, и Московской области.']")
+
+    cookies_accept = (By.XPATH, "//button[text() = 'да все привыкли']")
