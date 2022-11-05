@@ -37,3 +37,5 @@ class MainPageLocators:  # Главная страница
         By.XPATH, "//p[text() = 'Да, обязательно. Всем самокатов! И Москве, и Московской области.']")
 
     cookies_accept = (By.XPATH, "//button[text() = 'да все привыкли']")
+
+    scroll_to_questions = (By.XPATH, '//div[text()="Вопросы о важном"]')

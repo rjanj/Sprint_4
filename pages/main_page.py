@@ -21,6 +21,7 @@ class MainPageScooter:
     question_eight_text = MainPageLocators.question_eight_text
     question_eight_answer = MainPageLocators.question_eight_answer
     cookies_accept = MainPageLocators.cookies_accept
+    scroll_in_to_questions = MainPageLocators.scroll_to_questions
 
     def __init__(self, driver):
         self.driver = driver
@@ -28,6 +29,10 @@ class MainPageScooter:
     @allure.step('Открываем главную страницу Scooter')
     def navigate(self):
         self.driver.get('https://qa-scooter.praktikum-services.ru')
+
+    def scroll_into_questions(self):
+        main_questions = self.driver.find_element(*self.scroll_in_to_questions)
+        self.driver.execute_script("arguments[0].scrollIntoView();", main_questions)
 
     @allure.step('Открываем первый вопрос')
     def click_question_one(self):

@@ -10,6 +10,7 @@ class TestQuestions:
         question_one = MainPageScooter(driver)
         question_one.navigate()
         question_one.main_cookies_accept()
+        question_one.scroll_into_questions()
         question_one.click_question_one()
         question_one_text = question_one.text_question_answer_one()
         assert question_one_text == 'Сутки — 400 рублей. Оплата курьеру — наличными или картой.'
@@ -20,6 +21,7 @@ class TestQuestions:
         question_two = MainPageScooter(driver)
         question_two.navigate()
         question_two.main_cookies_accept()
+        question_two.scroll_into_questions()
         question_two.click_question_two()
         question_two_text = question_two.text_question_answer_two()
         assert question_two_text == 'Пока что у нас так: один заказ — один самокат. Если хотите покататься с ' \
@@ -31,6 +33,7 @@ class TestQuestions:
         question_three = MainPageScooter(driver)
         question_three.navigate()
         question_three.main_cookies_accept()
+        question_three.scroll_into_questions()
         question_three.click_question_three()
         question_three_text = question_three.text_question_answer_three()
         assert question_three_text == 'Допустим, вы оформляете заказ на 8 мая. Мы привозим самокат 8 мая в течение ' \
@@ -44,6 +47,7 @@ class TestQuestions:
         question_four = MainPageScooter(driver)
         question_four.navigate()
         question_four.main_cookies_accept()
+        question_four.scroll_into_questions()
         question_four.click_question_four()
         question_four_text = question_four.text_question_answer_four()
         assert question_four_text == 'Только начиная с завтрашнего дня. Но скоро станем расторопнее.'
@@ -54,6 +58,7 @@ class TestQuestions:
         question_five = MainPageScooter(driver)
         question_five.navigate()
         question_five.main_cookies_accept()
+        question_five.scroll_into_questions()
         question_five.click_question_five()
         question_five_text = question_five.text_question_answer_five()
         assert question_five_text == 'Пока что нет! Но если что-то срочное — всегда можно позвонить в поддержку по ' \
@@ -65,6 +70,7 @@ class TestQuestions:
         question_six = MainPageScooter(driver)
         question_six.navigate()
         question_six.main_cookies_accept()
+        question_six.scroll_into_questions()
         question_six.click_question_six()
         question_six_text = question_six.text_question_answer_six()
         assert question_six_text == 'Самокат приезжает к вам с полной зарядкой. Этого хватает на восемь суток — даже ' \
@@ -76,6 +82,7 @@ class TestQuestions:
         question_seven = MainPageScooter(driver)
         question_seven.navigate()
         question_seven.main_cookies_accept()
+        question_seven.scroll_into_questions()
         question_seven.click_question_seven()
         question_seven_text = question_seven.text_question_answer_seven()
         assert question_seven_text == "Да, пока самокат не привезли. Штрафа не будет, объяснительной записки тоже не " \
@@ -87,6 +94,7 @@ class TestQuestions:
         question_eight = MainPageScooter(driver)
         question_eight.navigate()
         question_eight.main_cookies_accept()
+        question_eight.scroll_into_questions()
         question_eight.click_question_eight()
         question_eight_text = question_eight.text_question_answer_eight()
         assert question_eight_text == 'Да, обязательно. Всем самокатов! И Москве, и Московской области.'
