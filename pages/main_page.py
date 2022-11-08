@@ -1,4 +1,8 @@
 import allure
+from selenium.webdriver.common.by import By
+
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 from locators.main_page_locators import MainPageLocators
 
@@ -33,6 +37,7 @@ class MainPageScooter:
     def scroll_into_questions(self):
         main_questions = self.driver.find_element(*self.scroll_in_to_questions)
         self.driver.execute_script("arguments[0].scrollIntoView();", main_questions)
+        WebDriverWait(self.driver, 5).until(EC.visibility_of_element_located((By.CLASS_NAME, "Home_FAQ__3uVm4")))
 
     @allure.step('Открываем первый вопрос')
     def click_question_one(self):
@@ -108,3 +113,8 @@ class MainPageScooter:
 
     def main_cookies_accept(self):
         self.driver.find_element(*self.cookies_accept).click()
+
+    def navigate_cookie_scroll(self):
+        self.navigate()
+        self.main_cookies_accept()
+        self.scroll_into_questions()

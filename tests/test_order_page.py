@@ -33,7 +33,6 @@ class TestScooterOrder:
         address = 'Истра'
         number = '88003333333'
         note = 'Мерси'
-        reg_order.wait_element()
         reg_order.order_page_login(name, second_name, address, number, note)
         order_complete_text = reg_order.order_page_order_complete_text()
         assert 'Заказ оформлен' in order_complete_text
@@ -52,7 +51,6 @@ class TestSiteNavigating:
         address = 'Москва'
         number = '88003333333'
         note = 'Спасибо'
-        reg_order.wait_element()
         reg_order.order_page_login(name, second_name, address, number, note)
         reg_order.order_page_status_button()
         reg_order.scooter_image_click()
@@ -70,7 +68,6 @@ class TestSiteNavigating:
         address = 'Москва'
         number = '88003333333'
         note = 'Скорее бы'
-        reg_order.wait_element()
         reg_order.order_page_login(name, second_name, address, number, note)
         reg_order.order_page_status_button()
         reg_order.yandex_image_click()

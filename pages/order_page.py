@@ -43,6 +43,7 @@ class OrderPageScooter:
     @allure.step('Нажали на кнопку заказать в теле сайта')
     def order_button_two_click(self):
         self.driver.find_element(*self.main_order_button_two).click()
+        WebDriverWait(self.driver, 5)
 
     @allure.step('Вводим имя')
     def order_page_name_field(self, name):
@@ -126,8 +127,6 @@ class OrderPageScooter:
                 break
         wait.until(EC.title_is("Дзен"))
 
-    def wait_element(self):
-        WebDriverWait(self.driver, 5)
     def order_cookies_accept(self):
         self.driver.find_element(*self.cookies_accept).click()
 
