@@ -41,65 +41,57 @@ class MainPageScooter:
 
     @allure.step('Открываем первый вопрос и получаем на него ответ')
     def click_question_one_and_take_answer(self):
-        WebDriverWait(self.driver, 3)
         self.driver.find_element(*self.question_one_text).click()
-        WebDriverWait(self.driver, 3)
+        WebDriverWait(self.driver, 5).until(EC.visibility_of_element_located((By.ID, 'accordion__panel-0')))
         question_one_answer = self.driver.find_element(*self.question_one_answer).text
         return question_one_answer
 
     @allure.step('Открываем второй вопрос и получаем на него ответ')
     def click_question_two_and_take_answer(self):
-        WebDriverWait(self.driver, 3)
         self.driver.find_element(*self.question_two_text).click()
-        WebDriverWait(self.driver, 3)
+        WebDriverWait(self.driver, 5).until(EC.visibility_of_element_located((By.ID, 'accordion__panel-1')))
         question_two_answer = self.driver.find_element(*self.question_two_answer).text
         return question_two_answer
 
     @allure.step('Открываем третий вопрос и получаем на него ответ')
     def click_question_three_and_take_answer(self):
-        WebDriverWait(self.driver, 3)
         self.driver.find_element(*self.question_three_text).click()
-        WebDriverWait(self.driver, 3)
+        WebDriverWait(self.driver, 5).until(EC.visibility_of_element_located((By.ID, 'accordion__panel-2')))
         question_three_answer = self.driver.find_element(*self.question_three_answer).text
         return question_three_answer
 
     @allure.step('Открываем четвертый вопрос и получаем на него ответ')
     def click_question_four_and_take_answer(self):
-        WebDriverWait(self.driver, 3)
         self.driver.find_element(*self.question_four_text).click()
-        WebDriverWait(self.driver, 3)
+        WebDriverWait(self.driver, 5).until(EC.visibility_of_element_located((By.ID, 'accordion__panel-3')))
         question_four_answer = self.driver.find_element(*self.question_four_answer).text
         return question_four_answer
 
     @allure.step('Открываем пятый вопрос и получаем на него ответ')
     def click_question_five_and_take_answer(self):
-        WebDriverWait(self.driver, 3)
         self.driver.find_element(*self.question_five_text).click()
-        WebDriverWait(self.driver, 3)
+        WebDriverWait(self.driver, 5).until(EC.visibility_of_element_located((By.ID, 'accordion__panel-4')))
         question_five_answer = self.driver.find_element(*self.question_five_answer).text
         return question_five_answer
 
     @allure.step('Открываем шестой вопрос и получаем на него ответ')
     def click_question_six_and_take_answer(self):
-        WebDriverWait(self.driver, 3)
         self.driver.find_element(*self.question_six_text).click()
-        WebDriverWait(self.driver, 3)
+        WebDriverWait(self.driver, 5).until(EC.visibility_of_element_located((By.ID, 'accordion__panel-5')))
         question_six_answer = self.driver.find_element(*self.question_six_answer).text
         return question_six_answer
 
     @allure.step('Открываем седьмой вопрос и получаем на него ответ')
     def click_question_seven_and_take_answer(self):
-        WebDriverWait(self.driver, 3)
         self.driver.find_element(*self.question_seven_text).click()
-        WebDriverWait(self.driver, 3)
+        WebDriverWait(self.driver, 5).until(EC.visibility_of_element_located((By.ID, 'accordion__panel-6')))
         question_seven_answer = self.driver.find_element(*self.question_seven_answer).text
         return question_seven_answer
 
     @allure.step('Открываем восьмой вопрос и получаем на него ответ')
     def click_question_eight_and_take_answer(self):
-        WebDriverWait(self.driver, 3)
         self.driver.find_element(*self.question_eight_text).click()
-        WebDriverWait(self.driver, 3)
+        WebDriverWait(self.driver, 5).until(EC.visibility_of_element_located((By.ID, 'accordion__panel-7')))
         question_eight_answer = self.driver.find_element(*self.question_eight_answer).text
         return question_eight_answer
 
