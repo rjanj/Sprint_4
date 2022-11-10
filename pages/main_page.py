@@ -39,75 +39,67 @@ class MainPageScooter:
         self.driver.execute_script("arguments[0].scrollIntoView();", main_questions)
         WebDriverWait(self.driver, 5).until(EC.visibility_of_element_located((By.CLASS_NAME, "Home_FAQ__3uVm4")))
 
-    @allure.step('Открываем первый вопрос')
-    def click_question_one(self):
+    @allure.step('Открываем первый вопрос и получаем на него ответ')
+    def click_question_one_and_take_answer(self):
+        WebDriverWait(self.driver, 3)
         self.driver.find_element(*self.question_one_text).click()
-
-    @allure.step('Получаем ответ на первый вопрос')
-    def text_question_answer_one(self):
+        WebDriverWait(self.driver, 3)
         question_one_answer = self.driver.find_element(*self.question_one_answer).text
         return question_one_answer
 
-    @allure.step('Открываем второй вопрос')
-    def click_question_two(self):
+    @allure.step('Открываем второй вопрос и получаем на него ответ')
+    def click_question_two_and_take_answer(self):
+        WebDriverWait(self.driver, 3)
         self.driver.find_element(*self.question_two_text).click()
-
-    @allure.step('Получаем ответ на второй вопрос')
-    def text_question_answer_two(self):
+        WebDriverWait(self.driver, 3)
         question_two_answer = self.driver.find_element(*self.question_two_answer).text
         return question_two_answer
 
-    @allure.step('Открываем третий вопрос')
-    def click_question_three(self):
+    @allure.step('Открываем третий вопрос и получаем на него ответ')
+    def click_question_three_and_take_answer(self):
+        WebDriverWait(self.driver, 3)
         self.driver.find_element(*self.question_three_text).click()
-
-    @allure.step('Получаем ответ на третий вопрос')
-    def text_question_answer_three(self):
+        WebDriverWait(self.driver, 3)
         question_three_answer = self.driver.find_element(*self.question_three_answer).text
         return question_three_answer
 
-    @allure.step('Открываем четвертый вопрос')
-    def click_question_four(self):
+    @allure.step('Открываем четвертый вопрос и получаем на него ответ')
+    def click_question_four_and_take_answer(self):
+        WebDriverWait(self.driver, 3)
         self.driver.find_element(*self.question_four_text).click()
-
-    @allure.step('Получаем ответ на четвертый вопрос')
-    def text_question_answer_four(self):
+        WebDriverWait(self.driver, 3)
         question_four_answer = self.driver.find_element(*self.question_four_answer).text
         return question_four_answer
 
-    @allure.step('Открываем пятый вопрос')
-    def click_question_five(self):
+    @allure.step('Открываем пятый вопрос и получаем на него ответ')
+    def click_question_five_and_take_answer(self):
+        WebDriverWait(self.driver, 3)
         self.driver.find_element(*self.question_five_text).click()
-
-    @allure.step('Получаем ответ на пятый вопрос')
-    def text_question_answer_five(self):
+        WebDriverWait(self.driver, 3)
         question_five_answer = self.driver.find_element(*self.question_five_answer).text
         return question_five_answer
 
-    @allure.step('Открываем шестой вопрос')
-    def click_question_six(self):
+    @allure.step('Открываем шестой вопрос и получаем на него ответ')
+    def click_question_six_and_take_answer(self):
+        WebDriverWait(self.driver, 3)
         self.driver.find_element(*self.question_six_text).click()
-
-    @allure.step('Получаем ответ на шестой вопрос')
-    def text_question_answer_six(self):
+        WebDriverWait(self.driver, 3)
         question_six_answer = self.driver.find_element(*self.question_six_answer).text
         return question_six_answer
 
-    @allure.step('Открываем седьмой вопрос')
-    def click_question_seven(self):
+    @allure.step('Открываем седьмой вопрос и получаем на него ответ')
+    def click_question_seven_and_take_answer(self):
+        WebDriverWait(self.driver, 3)
         self.driver.find_element(*self.question_seven_text).click()
-
-    @allure.step('Получаем ответ на седьмой вопрос')
-    def text_question_answer_seven(self):
+        WebDriverWait(self.driver, 3)
         question_seven_answer = self.driver.find_element(*self.question_seven_answer).text
         return question_seven_answer
 
-    @allure.step('Открываем восьмой вопрос')
-    def click_question_eight(self):
+    @allure.step('Открываем восьмой вопрос и получаем на него ответ')
+    def click_question_eight_and_take_answer(self):
+        WebDriverWait(self.driver, 3)
         self.driver.find_element(*self.question_eight_text).click()
-
-    @allure.step('Получаем ответ на восьмой вопрос')
-    def text_question_answer_eight(self):
+        WebDriverWait(self.driver, 3)
         question_eight_answer = self.driver.find_element(*self.question_eight_answer).text
         return question_eight_answer
 
