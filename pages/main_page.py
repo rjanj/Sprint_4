@@ -47,7 +47,7 @@ class MainPageScooter:
         self.scroll_into_questions()
 
     def click_question_and_take_answer(self, click, question):
-        WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located((By.CLASS_NAME, "Home_FAQ__3uVm4")))
+        WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(click))
         self.driver.find_element(*click).click()
         WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(question))
         question_answer = self.driver.find_element(*question).text
